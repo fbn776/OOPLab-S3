@@ -1,5 +1,4 @@
-import animalpackage.carnivourous.Bear;
-import animalpackage.carnivourous.Lion;
+import animalpackage.carnivourous.*;
 import animalpackage.herbivorous.*;
 
 public class Main {
