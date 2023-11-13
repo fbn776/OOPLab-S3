@@ -2,7 +2,7 @@
 
 ### Questions
 
-#### (animalpackage.Animal) Basic programs using datatype, operators, and control statements in Java.
+#### Basic programs using datatype, operators, and control statements in Java.
 
 1) Write a Java program that checks whether a given string is a palindrome or not.
 2) Write a Java Program to find the frequency of a given character in a string. **
