@@ -21,19 +21,6 @@ class DoublyLinkedList {
         header.right = temp;
     }
 
-//    public void addAt(int key, int data) {
-//        DataNode temp = header.right;
-//        while(temp != null && temp.data != key) {
-//            temp = temp.right;
-//        }
-//
-//        DataNode node = new DataNode(temp, temp.right, data);
-//        if(temp.right != null) {
-//            temp.right.left = node;
-//        }
-//        temp.right = node;
-//    }
-
     public int delete(int key) {
         DataNode temp = header.right;
         while(temp != null && temp.data != key) {
@@ -60,8 +47,6 @@ class DoublyLinkedList {
             temp = temp.right;
         }
     }
-
-    //public void
 }
 
 
