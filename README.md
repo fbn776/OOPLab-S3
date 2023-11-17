@@ -33,6 +33,16 @@
    The class animalpackage.Animal is in package ‘packageone’ and contains a method ‘methodClassOne’ that prints a message stating that it is printed from class animalpackage.Animal.
    Similarly, class B is in package ‘packagetwo’ and contains a method ‘methodClassTwo’ that prints a message stating that it is printed from class B.
    The Main class imports these classes, creates their instances and invokes their corresponding methods. 
-9) Consider a scenario where an interface named ‘animalpackage.Animal’ is in a package named ‘animalpackage’ and it declares two methods ‘get_cries’ and ‘get_eating_type’ that are place holders for printing the cry and eating type of animals.
-   The subpackages of ‘animalpackage’ are ‘herbivorous’ and ‘carnivourous’. The ‘herbivorous’ package contains two classes ‘Cow’ and ‘Elephant’ that implements the ‘animalpackage.Animal’ interface.
-   Similarly, the ‘carnivourous’ package contains ‘Lion’ and ‘Bear’ that too implement the interface. Design a Main class that import these classes and invokes the corresponding methods.
+9) Consider a scenario where an interface named ‘animalpackage.Animal’ is in a package named ‘animalpackage’ and it declares two methods ‘get_cries’ and ‘get_eating_type’ that are placeholders for printing the cry and eating type of animals.
+   The subpackages of ‘animalpackage’ are ‘herbivorous’ and ‘carnivorous’. The ‘herbivorous’ package contains two classes ‘Cow’ and ‘Elephant’ that implements the ‘animalpackage.Animal’ interface.
+   Similarly, the ‘carnivorous’ package contains ‘Lion’ and ‘Bear’ that to implement the interface. Design a Main class that import these classes and invokes the corresponding methods.
+
+#### (F) Standard Searching and Sorting Algorithms using data structures and algorithms learned from course Data Structures (CST 201):
+
+16) Write a Java program for the following:
+    1) Create a doubly linked list of elements.
+    2) Delete a given element from the above list.
+    3) Display the contents of the list after deletion.
+17) Write a Java program that implements Quick sort algorithm for sorting a list of names in
+		ascending order.
+18) Write a Java program that implements the binary search algorithm.
