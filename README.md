@@ -2,7 +2,7 @@
 
 ### Questions
 
-#### Basic programs using datatype, operators, and control statements in Java.
+#### (A) Basic programs using datatype, operators, and control statements in Java.
 
 1) Write a Java program that checks whether a given string is a palindrome or not.
 2) Write a Java Program to find the frequency of a given character in a string. **
@@ -29,13 +29,19 @@
 
 #### (D) Package
 
-8) Write a Java program which contains three classes animalpackage.Animal, B and Main. 
+8) Write a Java program which contains three classes animalpackage.Animal, B and Main1. 
    The class animalpackage.Animal is in package ‘packageone’ and contains a method ‘methodClassOne’ that prints a message stating that it is printed from class animalpackage.Animal.
    Similarly, class B is in package ‘packagetwo’ and contains a method ‘methodClassTwo’ that prints a message stating that it is printed from class B.
-   The Main class imports these classes, creates their instances and invokes their corresponding methods. 
+   The Main1 class imports these classes, creates their instances and invokes their corresponding methods. 
 9) Consider a scenario where an interface named ‘animalpackage.Animal’ is in a package named ‘animalpackage’ and it declares two methods ‘get_cries’ and ‘get_eating_type’ that are placeholders for printing the cry and eating type of animals.
    The subpackages of ‘animalpackage’ are ‘herbivorous’ and ‘carnivorous’. The ‘herbivorous’ package contains two classes ‘Cow’ and ‘Elephant’ that implements the ‘animalpackage.Animal’ interface.
-   Similarly, the ‘carnivorous’ package contains ‘Lion’ and ‘Bear’ that to implement the interface. Design a Main class that import these classes and invokes the corresponding methods.
+   Similarly, the ‘carnivorous’ package contains ‘Lion’ and ‘Bear’ that to implement the interface. Design a Main1 class that import these classes and invokes the corresponding methods.
+
+#### (E) Handling different types Of files as well as input and output management methods:
+
+7) Write a file handling program in Java with reader/writer.
+8) Write a Java program that read from a file and write to file by handling all file related exceptions.
+9) Write a Java program that reads a line of integers, and then displays each integer, and the sum of all the integers (Use String Tokenizer class of java.util).
 
 #### (F) Standard Searching and Sorting Algorithms using data structures and algorithms learned from course Data Structures (CST 201):
 

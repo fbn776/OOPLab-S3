@@ -1,7 +1,7 @@
 import animalpackage.carnivourous.*;
 import animalpackage.herbivorous.*;
 
-public class Main {
+public class Main1 {
     public static void main(String[] args) {
         Cow c = new Cow();
         Elephant e = new Elephant();
