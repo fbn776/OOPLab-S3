@@ -12,8 +12,7 @@ public class FileHandlingPgm {
 
             FileWriter fw = new FileWriter(fileName);
             FileReader fr = new FileReader(fileName);
-
-
+            //hello
 
             System.out.println("Writing to file: " + fileName);
             fw.write(writeText);
