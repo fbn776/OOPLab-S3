@@ -1,15 +1,19 @@
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 public class FileHandlingPgm {
     public static void main(String[] args) {
-        String fileName = "test.txt";
-        String writeText = "Hello there, how are you?";
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         try {
+            System.out.print("Enter file name: ");
+            String fileName = br.readLine();
+            System.out.print("Enter file content: ");
+            String writeText = br.readLine();
+
             FileWriter fw = new FileWriter(fileName);
             FileReader fr = new FileReader(fileName);
+
+
 
             System.out.println("Writing to file: " + fileName);
             fw.write(writeText);
