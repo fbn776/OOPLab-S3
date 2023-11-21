@@ -1,23 +1,20 @@
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.Scanner;
+import java.io.*;
 
 public class ReadFromWriteToPgm {
     public static void main(String[] args) {
-        Scanner scn = new Scanner(System.in);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        System.out.print("Enter file to read from: ");
-        String readFileName = scn.next();
+        String readFileName = null;
         try {
+            System.out.print("Enter file to read from: ");
+            readFileName = br.readLine();
             /// Reading section
             FileReader fr = new FileReader(readFileName);
             System.out.println("Reading from file: " + readFileName);
 
             String readText = "";
             int unit;
-            while((unit = fr.read()) != -1) {
+            while ((unit = fr.read()) != -1) {
                 readText += (char) unit;
             }
 
@@ -26,7 +23,7 @@ public class ReadFromWriteToPgm {
 
             /// Writing section;
             System.out.print("Enter file to write to: ");
-            String writeFileName = scn.next();
+            String writeFileName = br.readLine();
 
             FileWriter fw = new FileWriter(writeFileName);
             System.out.println("Writing to file: " + writeFileName);
@@ -34,8 +31,7 @@ public class ReadFromWriteToPgm {
             fw.close();
         } catch (FileNotFoundException e) {
             System.out.println("File " + readFileName + " is not found");
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             System.out.println(e);
         }
 

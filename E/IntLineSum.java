@@ -30,9 +30,9 @@ public class IntLineSum {
             int[] arr = IntHandler.getIntArr();
             int sum = 0;
 
-            for(int i=0; i<arr.length; i++) {
-                System.out.println(arr[i]);
-                sum += arr[i];
+            for (int j : arr) {
+                System.out.println(j);
+                sum += j;
             }
 
             System.out.println("Sum is: " + sum);
