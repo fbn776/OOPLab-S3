@@ -1,6 +1,6 @@
 class Search {
     static int ERROR = -99999;
-    static void binarySearch(int[] arr, int key) {
+    static int binarySearch(int[] arr, int key) {
         int left = 0;
         int right = arr.length - 1;
 
@@ -8,7 +8,7 @@ class Search {
             int mid = (left + right) / 2;
             if(arr[mid] == key) {
                 System.out.println("Found element at: " + mid);
-                return;
+                return mid;
             }
 
             if(arr[mid] > key) {
@@ -18,6 +18,7 @@ class Search {
             }
         }
         System.out.println("Element not found");
+        return ERROR;
     }
 }
 

@@ -1,85 +1,68 @@
-class Storage {
-    int i = 0;
-    int[] data = new int[10];
-
-    private int getRand() {
-        return (int) (Math.random() * 100);
-    }
-
-    void produce(int a) throws InterruptedException {
-        while(i == data.length - 1) {
-            wait();
-        }
-
-        data[++i] = a;
-        System.out.println("Added: " + a);
-        notifyAll();
-    }
-
-    int consume() throws InterruptedException {
-        while(i == 0) {
-            wait();
-        }
-        int item = this.data[i--];
-        System.out.println("Got: " + item);
-        notifyAll();
-        return item;
-    }
-
-    private boolean isFull() {
-        return i == data.length - 1;
-    }
+class SharedData {
+    int counter = 1;
+    static int N;
 }
 
-class Producer extends Thread {
-    private final Storage store;
-    public Producer(Storage store) {
-        this.store = store;
+class OddNumberPrinter extends Thread {
+    SharedData sharedData;
+    public OddNumberPrinter(SharedData sharedData) {
+        this.sharedData = sharedData;
     }
 
     public void run() {
-        try {
-            while (true) {
-                int item = produceItem();
-                store.produce(item);
-                Thread.sleep(1000);
+        synchronized (sharedData) {
+            while (sharedData.counter < SharedData.N) {
+                while (sharedData.counter % 2 == 0) {
+                    try {
+                        sharedData.wait();
+                    } catch (InterruptedException e) {}
+                }
+
+                System.out.println("Odd thread: " + sharedData.counter);
+                sharedData.counter++;
+                sharedData.notify();
             }
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
         }
-    }
-    private int produceItem() {
-        return (int) (Math.random() * 100);
     }
 }
 
-class Consumer extends Thread{
-    private final Storage store;
-    public Consumer(Storage store) {
-        this.store = store;
+class EvenNumberPrinter extends Thread {
+    SharedData sharedData;
+    public EvenNumberPrinter(SharedData sharedData) {
+        this.sharedData = sharedData;
     }
 
     public void run() {
-        try {
-            while (true) {
-                store.consume();
-                Thread.sleep(1000);
-            }
-        } catch (InterruptedException e) {
-            System.out.println("Exception");
-        }
+        synchronized (sharedData) {
+            while (sharedData.counter < SharedData.N) {
+                while (sharedData.counter % 2 == 1) {
+                    try {
+                        sharedData.wait();
+                    } catch (InterruptedException e) {}
+                }
 
+                System.out.println("Even thread: " + sharedData.counter);
+                sharedData.counter++;
+                sharedData.notify();
+            }
+        }
     }
 }
 
 public class ThreadSync {
     public static void main(String[] args) {
-        Storage s = new Storage();
+        SharedData sharedData = new SharedData();
+        SharedData.N = 10;
 
-        Producer producerThread = new Producer(s);
-        Consumer consumerThread = new Consumer(s);
+        OddNumberPrinter oddPrinter = new OddNumberPrinter(sharedData);
+        EvenNumberPrinter evenPrinter = new EvenNumberPrinter(sharedData);
 
-        producerThread.start();
-        consumerThread.start();
+        oddPrinter.start();
+        evenPrinter.start();
+
+        try {
+            oddPrinter.join();
+            evenPrinter.join();
+        } catch (InterruptedException e) {}
     }
 }

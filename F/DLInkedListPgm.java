@@ -46,7 +46,7 @@ class DoublyLinkedList {
         }
     }
 
-    public int delete(int key) {
+    public int deleteAt(int key) {
         DataNode temp = header.right;
         while(temp != null && temp.data != key) {
             temp = temp.right;
@@ -67,7 +67,7 @@ class DoublyLinkedList {
 
     public int deleteFront() {
         if(header.right == null) {
-            return -1;
+            return ERROR;
         }
         header.right.left = header;
         header.right = header.right.right;
@@ -77,7 +77,7 @@ class DoublyLinkedList {
 
     public int deleteRear() {
         if(header.right == null) {
-            return -1;
+            return ERROR;
         }
 
         DataNode temp = header;
@@ -110,10 +110,10 @@ public class DLInkedListPgm {
         dl.addFront(8);
 
         dl.display();
-        dl.delete(12);
+        dl.deleteAt(12);
         dl.display();
-        dl.delete(10);
+        dl.deleteAt(10);
         dl.display();
-        dl.delete(293);
+        dl.deleteAt(293);
     }
 }
